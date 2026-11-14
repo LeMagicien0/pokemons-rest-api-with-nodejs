@@ -1,3 +1,5 @@
+const { get } = require("node:http")
+
 module.exports = (sequilize, DataTypes) => {
     return sequilize.define('Pokemon', {
         id: {
@@ -23,7 +25,14 @@ module.exports = (sequilize, DataTypes) => {
         },
         types: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: false,
+            get() {
+                return this.getDataValue('types').split(',')
+            },
+            set(types) {
+                this.setDataValue('types', types.join())
+            }
+        
         }
     },
     {
