@@ -23,4 +23,10 @@ require('./src/routes/createPokemon')(app); // endpoint pour créer un nouveau p
 require('./src/routes/updatePokemon')(app); // endpoint pour mettre à jour un pokémon existant
 require('./src/routes/destroyPokemon')(app); // endpoint pour supprimer un pokémon existant
 
+// On ajoute la gestion des erreurs
+app.use(({res}) => {
+    const message = `Impossible de trouver la ressource donnée ! vous pouvez essayer un autre URL.`
+    res.status(404).json(message)
+})
+
 app.listen(port, () => console.log(`App listening on port ${port}! and the path is: http://localhost:${port}`));  
