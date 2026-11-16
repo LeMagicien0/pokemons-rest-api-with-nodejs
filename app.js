@@ -22,6 +22,7 @@ require('./src/routes/findPokemonByPk')(app); // endpoint pour récupérer un po
 require('./src/routes/createPokemon')(app); // endpoint pour créer un nouveau pokémon
 require('./src/routes/updatePokemon')(app); // endpoint pour mettre à jour un pokémon existant
 require('./src/routes/destroyPokemon')(app); // endpoint pour supprimer un pokémon existant
+require('./src/routes/login')(app); // endpoint pour se connecter   
 
 // On ajoute la gestion des erreurs
 app.use(({res}) => {

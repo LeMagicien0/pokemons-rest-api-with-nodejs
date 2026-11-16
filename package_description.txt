@@ -7,3 +7,13 @@ Le package morgan permet de loggeur les donnees dans le terminale
 Le package nodemon permet de relancer automatiquement l'app a chaque modification dans le code de l'app en cours d'execution
 
 Le package body-parser permet de transformer les json en string et inversement. cela est necessaire pour l'echange des donnees provenant de http (string) et ceux du serveur (json)
+
+Le package bcrypt permet le cryptage des mots de passes 
+
+Le package jsonwebtoken permet la generation des token apres l'authentification des utilisateurs, se jeton lui permet d'acceder aux ressources protege pour une duree donnee
+pour faire des tests sur les authentifications, il faut d'abord se connecter grace a la route creee et ajouter dans le body le json suivant 
+{
+    "username": "pikachu",
+    "password": "pikachu"
+}
+une fois connecter copier le token qui est fourni dans la reponse du serveur pour l'ajouter a bearer token dans l'onglet Authorization des diferentes routes dans postman

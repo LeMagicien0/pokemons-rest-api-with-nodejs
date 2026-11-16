@@ -1,0 +1,1 @@
+module.exports = `CUSTOM_PRIVATE_KEY`  // represents the private key used for signing JWT tokens.

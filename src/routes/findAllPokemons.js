@@ -1,8 +1,9 @@
 const {Pokemon} = require('../db/sequilize');
 const {Op} = require('sequelize')
+const auth = require('../auth/auth')
 
 module.exports = (app) => {
-    app.get('/api/pokemons', (req, res) => {
+    app.get('/api/pokemons', auth, (req, res) => {
         
         if(req.query.name){ // dans le cas ou on passe un parametre de recherche name a notre ends point
             const name = req.query.name
